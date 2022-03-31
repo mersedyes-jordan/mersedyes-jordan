@@ -20,3 +20,11 @@ fetch(baseURL)
             count++;
         }
     }, interval);
+
+const movieSearchInput = document.getElementById('movie-search-bar');
+const searchList = document.getElementById('search-list');
+const resultInfo = document.getElementById('result-info');
+
+// load movies from API
+
+// display movies and details
