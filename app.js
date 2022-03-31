@@ -1,47 +1,37 @@
 'use strict';
 
-const baseURL = 'https://api.themoviedb.org/3/search/multi?';
+let count = 0;
+let max = 2;
+let interval = 1000;
+const loadingPage = document.getElementById('loading-page');
+var intervalId = setInterval(function () {
+    if (count >= max) {
+        loadingPage.innerHTML = 'This is where the movies will be';
+    } else {
+        count++;
+    }}, interval);
 
-fetch(baseURL+MOVIE_API_KEY)
-    .then(response => response.json())
-    .then(data => {
+fetch('https://api.themoviedb.org/3/discover/movie?' + MOVIE_API_KEY)
+    .then(res => res.json())
+    .then( data => {
         console.log(data)
     });
 
-    let count = 0;
-    let max = 2;
-    let interval = 1000;
-    const loadingPage = document.getElementById('loading-page');
+let userInput = document.getElementById("movie-search-bar");
+userInput.addEventListener('keyup', searchMovie);
+let searchResults = [];
 
-    var intervalId = setInterval(function () {
-        if (count >= max) {
-            loadingPage.innerHTML = 'Movie App will display here';
-        } else {
-            count++;
-        }
-    }, interval);
+function searchMovie(e) {
 
-const movieSearchInput = document.getElementById('movie-search-bar');
-const searchList = document.getElementById('search-list');
-const resultInfo = document.getElementById('result-info');
+    let result = userInput.value;
+    console.log(result);
 
-// load movies from API
-async function loadMovies(searchMovie){
-    // const URL = ``;
-    const res = await fetch(`${URL}`);
-    const data = await res.json();
-    console.log(data.Search);
-    if (data.Response == "True") displayMovieResult(data.search);
-}
-function findMovies() {
-    let searchTerm = (movieSearchInput.value).trim();
-    if (searchTerm.length > 0){
-        searchList.classList.remove('hide-search-list');
-        loadMovies(searchTerm);
-    } else {
-        searchList.classList.add('hide-search-list');
-    }
+    fetch('https://api.themoviedb.org/3/search/movie?' + MOVIE_API_KEY + `&query=${result}` + '&language=en-US' + '&include_adult=false')
+        .then(res => res.json())
+        .then( data => {
+            searchResults = data;
+            console.log(searchResults);
+        });
 }
 
-// display movies and details
 
