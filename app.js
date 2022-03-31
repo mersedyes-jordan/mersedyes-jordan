@@ -1,8 +1,8 @@
 'use strict';
 
-const baseURL = 'https://api.themoviedb.org/3/movie/550?api_key=6c44463bf264a541103d4abb9dea5861'
+const baseURL = 'https://api.themoviedb.org/3/search/multi?';
 
-fetch(baseURL)
+fetch(baseURL+MOVIE_API_KEY)
     .then(response => response.json())
     .then(data => {
         console.log(data)
@@ -26,5 +26,22 @@ const searchList = document.getElementById('search-list');
 const resultInfo = document.getElementById('result-info');
 
 // load movies from API
+async function loadMovies(searchMovie){
+    // const URL = ``;
+    const res = await fetch(`${URL}`);
+    const data = await res.json();
+    console.log(data.Search);
+    if (data.Response == "True") displayMovieResult(data.search);
+}
+function findMovies() {
+    let searchTerm = (movieSearchInput.value).trim();
+    if (searchTerm.length > 0){
+        searchList.classList.remove('hide-search-list');
+        loadMovies(searchTerm);
+    } else {
+        searchList.classList.add('hide-search-list');
+    }
+}
 
 // display movies and details
+

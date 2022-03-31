@@ -1,0 +1,1 @@
+const MOVIE_API_KEY = 'api_key=6c44463bf264a541103d4abb9dea5861';
