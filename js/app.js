@@ -91,7 +91,7 @@ function getMovie() {
                         ${movie.overview}
                         <hr>
                         <a href="https://api.themoviedb.org/3/search/movie?" target="_blank" class="btn btn-primary">View The Movie DB</a>
-                        <a href="index.html" class="btn btn-default">Go Back To Search</a>
+                        <a href="../index.html" class="btn btn-default">Go Back To Search</a>
                       </div>
                     </div>
             `;
