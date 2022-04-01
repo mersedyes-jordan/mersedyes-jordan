@@ -1,6 +1,6 @@
 'use strict';
 
-let url = 'https://api.themoviedb.org/3/discover/movie?' + MOVIE_API_KEY;
+let url = 'https://codeup-json-server.glitch.me/movies';
 
 fetch(url).then(res => res.json())
 .then(res => {
