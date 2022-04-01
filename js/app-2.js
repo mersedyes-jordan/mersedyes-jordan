@@ -56,7 +56,7 @@ function addMovieToList() {
 //delete a movie
 function deleteMovie(){
     fetch(url, {
-        method: 'DELETE'}
+        method: 'DELETE'
     })
     .then(res => {res.json()})
     .then(data => (data)
