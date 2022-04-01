@@ -24,17 +24,16 @@ function movieCard() {
         .then(data => {
 
             for (let x = 0; x < data.length; x++) {
-                $('.movies').append(`<div class = 'card m-2 text-center card-width' id = '${data[x].id}'>
-                                    <div class = 'card-body text-wrap'>
+                $('.movies').append(`<div class = 'card' id = '${data[x].id}'>
+                                    <div class = 'card-body'>
                                     <h5>${data[x].title}</h5>
-                                    <p class='card-text p-0 m-0'>Rating: ${data[x].rating}</p>
-                                    <p class="card-text p-0 m-0">Genre: ${data[x].genre}</p>
-                                    <button type="button" class="delete-btn btn btn-danger">Delete</button>
-                                    <button type="button" class="delete-btn btn btn-danger">Edit</button>
-                                    <button type="button" class="delete-btn btn btn-danger">Add</button>
+                                    <p class='card-text'>Rating: ${data[x].rating}</p>
+                                    <p class="card-text">Genre: ${data[x].genre}</p>
+                                    <button type="button" class="delete-btn">Delete</button>
+                                    <button type="button" class="edit-btn">Edit</button>
+                                    <button type="button" class="add-btn">Add</button>
                                     </div>
                                     </div>`)
-
             }
         });
 }
@@ -61,7 +60,9 @@ function deleteMovie(){
     .then(res => {res.json()})
     .then(data => (data)
     );
+    console.log(data);
 }
+
 //change or edit a movie
 function editMovie() {
     fetch(url, {
@@ -79,4 +80,7 @@ function editMovie() {
         .then(res => res.json())
         .then(data => data)
 }
+
+// Button Functionality
+
 
