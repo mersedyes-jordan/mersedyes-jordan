@@ -1,7 +1,7 @@
 'use strict';
 
 let count = 0;
-let max = 2;
+let max = 1;
 let interval = 1000;
 const loadingPage = document.getElementById('loading-page');
 var intervalId = setInterval(function () {
@@ -23,15 +23,22 @@ let searchResults = [];
 
 function searchMovie(e) {
 
+    let html = " ";
     let result = userInput.value;
+    let tbody = document.querySelector('#result-info');
     console.log(result);
 
     fetch('https://api.themoviedb.org/3/search/movie?' + MOVIE_API_KEY + `&query=${result}` + '&language=en-US' + '&include_adult=false')
         .then(res => res.json())
         .then( data => {
-            searchResults = data;
-            console.log(searchResults);
+
+            console.log(data);
+
+            for (let i = 0; i < data.results.length; i++) {
+
+                searchResults.push(data.results[i].title);
+                tbody.innerHTML = searchResults;
+            }
         });
 }
-
 
