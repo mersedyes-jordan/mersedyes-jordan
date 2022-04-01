@@ -90,7 +90,13 @@ function getMovie() {
                       <div class="well">
                         <h3>Plot</h3>
                         ${movie.overview}
+<<<<<<< HEAD:app.js
                       
+=======
+                        <hr>
+                        <a href="https://api.themoviedb.org/3/search/movie?" target="_blank" class="btn btn-primary">View The Movie DB</a>
+                        <a href="../index.html" class="btn btn-default">Go Back To Search</a>
+>>>>>>> f4f24dbe1754112085a2bbafb9870a160e1bcd6f:js/app.js
                       </div>
                     </div>
             `;
