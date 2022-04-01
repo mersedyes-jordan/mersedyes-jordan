@@ -66,6 +66,7 @@ function getMovie() {
     let movieId = sessionStorage.getItem('movieId');
 
     fetch('https://api.themoviedb.org/3/search/movie?' + MOVIE_API_KEY + `&query=${result}` + '&language=en-US' + '&include_adult=false')
+        .then(response => response.json())
         .then((response) => {
             console.log(response);
             let movie = response.data;
@@ -89,9 +90,7 @@ function getMovie() {
                       <div class="well">
                         <h3>Plot</h3>
                         ${movie.overview}
-                        <hr>
-                        <a href="https://api.themoviedb.org/3/search/movie?" target="_blank" class="btn btn-primary">View The Movie DB</a>
-                        <a href="index.html" class="btn btn-default">Go Back To Search</a>
+                      
                       </div>
                     </div>
             `;
