@@ -257,3 +257,8 @@ nav ul,nav li {
         }
     }
 }
+.submit {
+    background-color: var(--color-white);
+    font-size: 1rem;
+}
+
