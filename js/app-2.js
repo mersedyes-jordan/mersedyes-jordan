@@ -3,11 +3,6 @@
 let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
 
-let doTheThing = {
-    name: 'all dogs go to heaven',
-    release date: "July 2013";
-}
-
 // loadingPage()
 renderMovies()
 
