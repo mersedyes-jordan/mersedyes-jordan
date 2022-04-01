@@ -22,6 +22,14 @@ body {
     color: var(--color-white);
 }
 
+.search {
+    margin: 200px;
+}
+
+.container {
+    margin-left: 100px;
+}
+
 /*side navbar*/
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
