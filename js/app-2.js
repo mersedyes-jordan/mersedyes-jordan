@@ -3,6 +3,11 @@
 let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
 
+let doTheThing = {
+    name: 'all dogs go to heaven',
+    release date: "July 2013";
+}
+
 // loadingPage()
 renderMovies()
 
@@ -18,7 +23,18 @@ function renderMovies() {
 
 //add a movie
 function addMovieToList() {
-
+    const addMovie = {
+        newMovie,
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newMovie),
+    };
+    fetch(url, addMovie)
+        .then(res => console.log(res))
+        .then(data => movieCard(data))
+        .catch(error => console.log('You shall not pass'));
 }
 //delete a movie
 
