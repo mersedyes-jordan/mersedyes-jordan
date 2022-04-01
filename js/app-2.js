@@ -3,6 +3,7 @@
 let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
 
+https://dune-excited-mistake.glitch.me/movies/add
 // loadingPage()
 renderMovies()
 
