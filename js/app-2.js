@@ -54,7 +54,29 @@ function addMovieToList() {
         .catch(error => console.log('You shall not pass'));
 }
 //delete a movie
-
+function deleteMovie(){
+    fetch(url, {
+        method: 'DELETE'}
+    })
+    .then(res => {res.json()})
+    .then(data => (data)
+    );
+}
 //change or edit a movie
+function editMovie() {
+    fetch(url, {
+        method: 'PUT',
+        headers: {'Content-Type': application/json,
+        },
+        body: JSON.stringify({
+            title: '',
+            rating: '',
+            genre: '',
+            plot: ''
+        })
 
+        })
+        .then(res => res.json())
+        .then(data => data)
+}
 
