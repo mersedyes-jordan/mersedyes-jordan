@@ -4,7 +4,7 @@ let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
 $(document).on('click', '.edit-btn', editMovie)
 
-https://dune-excited-mistake.glitch.me/movies/add
+// https://dune-excited-mistake.glitch.me/movies/add
 // loadingPage()
 // renderMovies()
 //
@@ -47,7 +47,7 @@ function getMovieCard(movie) {
 }
 
 //add a movie
-function addMovieToList() {
+function addMovieToList(newMovie) {
     const addMovie = {
         method: 'POST',
         headers: {
@@ -60,6 +60,20 @@ function addMovieToList() {
         .then(data => movieCard(data))
         .catch(error => console.log('You shall not pass'));
 }
+//add movie button
+$('.addMovieBtn').click(function (event){
+    event.preventDefault();
+    let movieTitle = $('#add-movie-name').val();
+    let movieGenre = $('#add-movie-genre').val();
+    let movieRating = $('#add-movie-rating').val();
+    let movieInfo = {
+        title: movieTitle,
+        genre: movieGenre,
+        rating: movieRating
+    }
+    addMovieToList(movieInfo);
+});
+
 
 //delete a movie
 function deleteMovie(movieId) {
