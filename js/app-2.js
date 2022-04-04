@@ -28,8 +28,11 @@ function movieCard() {
                 $('.movies').append(`<div class = 'card' id = '${data[x].id}'>
                                     <div class = 'card-body'>
                                     <h5>${data[x].title}</h5>
-                                    <p class='card-text'>Rating: ${data[x].rating}</p>
+                                    <p class='card-text'>Plot: ${data[x].plot}</p>
+                                    <p class='card-text'>Director: ${data[x].director}</p>
+                                    <p class='card-text'>Year: ${data[x].year}</p>
                                     <p class="card-text">Genre: ${data[x].genre}</p>
+                                    <p class='card-text'>Rating: ${data[x].rating}</p>
                                     <button type="button" class="delete-btn">Delete</button>
                                     <button type="button" class="edit-btn">Edit</button>
                                     <button type="button" class="add-btn">Add</button>
