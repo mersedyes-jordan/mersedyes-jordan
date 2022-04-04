@@ -4,6 +4,7 @@ let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
 $(document).on('click', '.edit-btn', editMovie)
 
+
 $(window).on('load', function () {
     $('#loading-page').hide();
 });
@@ -32,7 +33,6 @@ function getMovieCard(movie) {
                 <button type="button" class="delete-btn" onclick="deleteMovie(${movie.id})">Delete
                 </button>
                 <button type="button" class="edit-btn" data-id="${movie.id}">Edit</button>
-                <button type="button" class="add-btn" onclick="addMovieToList()">Add</button>
             </div>
         </div>`
 }
