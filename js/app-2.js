@@ -2,6 +2,7 @@
 
 let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
+$(document).on('click', '.edit-btn', editMovie)
 
 // loadingPage()
 // renderMovies()
@@ -35,11 +36,11 @@ function getMovieCard(movie) {
     return `<div class='card' id='${movie.id}' data-id="${movie.id}">
             <div class='card-body'>
                 <h5>${movie.title}</h5>
-                <p class='card-text'>Rating: ${movie.rating}</p>
-                <p class="card-text">Genre: ${movie.genre}</p>
+                <input class='card-text rating' value="Rating: ${movie.rating}" readonly>
+                <input class="card-text genre" value="Genre: ${movie.genre}" readonly>
                 <button type="button" class="delete-btn" onclick="deleteMovie(${movie.id})">Delete
                 </button>
-                <button type="button" class="edit-btn" onclick="editMovie()">Edit</button>
+                <button type="button" class="edit-btn" data-id="${movie.id}">Edit</button>
                 <button type="button" class="add-btn" onclick="addMovieToList()">Add</button>
             </div>
         </div>`
@@ -48,7 +49,6 @@ function getMovieCard(movie) {
 //add a movie
 function addMovieToList() {
     const addMovie = {
-        newMovie,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -79,19 +79,34 @@ function deleteMovie(movieId) {
 
 //change or edit a movie
 function editMovie() {
-    fetch(url, {
+    $(document).off('click', '.edit-btn', editMovie)
+    let movieId = $(this).attr('data-id');
+    let movieCard = $(`.card[data-id=${movieId}]`);
+    let editButton = movieCard.find(`.edit-btn`)
+    movieCard.find(`input`).attr('readonly', false)
+    editButton.text('Save')
+    $(document).on('click', '.edit-btn', saveMovie)
+}
+
+function saveMovie() {
+    $(document).off('click', '.edit-btn', saveMovie)
+    console.log($(this))
+    let movieId = $(this).attr('data-id');
+    let movieCard = $(`.card[data-id=${movieId}]`);
+    let editButton = movieCard.find(`.edit-btn`)
+    movieCard.find(`input`).attr('readonly', true)
+    editButton.text('Edit')
+    $(document).on('click', '.edit-btn', editMovie)
+
+    fetch(url + `/${movieId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            title: '',
-            rating: '',
-            genre: '',
-            plot: ''
-        })
-
-    })
+            rating: movieCard.find('.rating').val(),
+            genre: movieCard.find('.genre').val(),
+        })})
         .then(res => res.json())
         .then(data => data)
 }
