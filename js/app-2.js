@@ -84,7 +84,15 @@ function editMovie() {
         .then(res => res.json())
         .then(data => data)
 }
+//search bar functionality
+const clearInput = () => {
+    const input = document.getElementsByTagName("input")[0];
+    input.value = "";
+}
 
-// Button Functionality
+const clearBtn = document.getElementById("clear-btn");
+clearBtn.addEventListener("click", clearInput);
+
+
 
 
