@@ -4,6 +4,7 @@ let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
 $(document).on('click', '.edit-btn', editMovie)
 
+<<<<<<< HEAD
 // https://dune-excited-mistake.glitch.me/movies/add
 // loadingPage()
 // renderMovies()
@@ -15,11 +16,14 @@ $(document).on('click', '.edit-btn', editMovie)
 //         // console.log(res)
 //         .catch(error => console.log(error))
 // }
+=======
+>>>>>>> 2629ef9ea9ecc99ae997489550b6c407045bb6bd
 
-//create a movie card
+$(window).on('load', function () {
+    $('#loading-page').hide();
+});
 
 renderMovies();
-
 
 function renderMovies() {
     fetch(url)
@@ -32,6 +36,7 @@ function renderMovies() {
         });
 }
 
+//create a movie card
 //language=HTML
 function getMovieCard(movie) {
     return `<div class='card' id='${movie.id}' data-id="${movie.id}">
