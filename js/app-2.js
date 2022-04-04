@@ -4,39 +4,47 @@ let url = 'https://dune-excited-mistake.glitch.me/movies';
 let newMovie = {};
 
 // loadingPage()
-renderMovies()
-
-function renderMovies() {
-    fetch(url)
-        .then(res => res.json())
-        .then(data => movieCard(data))
-            // console.log(res)
-        .catch(error => console.log(error))
-}
+// renderMovies()
+//
+// function renderMovies() {
+//     fetch(url)
+//         .then(res => res.json())
+//         .then(data => movieCard(data))
+//         // console.log(res)
+//         .catch(error => console.log(error))
+// }
 
 //create a movie card
 
-movieCard();
+renderMovies();
 
-function movieCard() {
+
+function renderMovies() {
     fetch(url)
         .then(res => res.json())
         .then(data => {
 
             for (let x = 0; x < data.length; x++) {
-                $('.movies').append(`<div class = 'card' id = '${data[x].id}'>
-                                    <div class = 'card-body'>
-                                    <h5>${data[x].title}</h5>
-                                    <p class='card-text'>Rating: ${data[x].rating}</p>
-                                    <p class="card-text">Genre: ${data[x].genre}</p>
-                                    <button type="button" class="delete-btn">Delete</button>
-                                    <button type="button" class="edit-btn">Edit</button>
-                                    <button type="button" class="add-btn">Add</button>
-                                    </div>
-                                    </div>`)
+                $('.movies').append(getMovieCard(data[x]))
             }
         });
 }
+
+//language=HTML
+function getMovieCard(movie) {
+    return `<div class='card' id='${movie.id}' data-id="${movie.id}">
+            <div class='card-body'>
+                <h5>${movie.title}</h5>
+                <p class='card-text'>Rating: ${movie.rating}</p>
+                <p class="card-text">Genre: ${movie.genre}</p>
+                <button type="button" class="delete-btn" onclick="deleteMovie(${movie.id})">Delete
+                </button>
+                <button type="button" class="edit-btn" onclick="editMovie()">Edit</button>
+                <button type="button" class="add-btn" onclick="addMovieToList()">Add</button>
+            </div>
+        </div>`
+}
+
 //add a movie
 function addMovieToList() {
     const addMovie = {
@@ -52,22 +60,29 @@ function addMovieToList() {
         .then(data => movieCard(data))
         .catch(error => console.log('You shall not pass'));
 }
+
 //delete a movie
-function deleteMovie(){
-    fetch(url, {
+function deleteMovie(movieId) {
+    console.log(movieId);
+    fetch(url + `/${movieId}`, {
         method: 'DELETE'
     })
-    .then(res => {res.json()})
-    .then(data => (data)
-    );
-    console.log(data);
+        .then(res => {
+            res.json()
+        })
+        .then(data => {
+                (data)
+                $(`.card[data-id=${movieId}]`).remove();
+            }
+        );
 }
 
 //change or edit a movie
 function editMovie() {
     fetch(url, {
         method: 'PUT',
-        headers: {'Content-Type': application/json,
+        headers: {
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             title: '',
@@ -76,11 +91,7 @@ function editMovie() {
             plot: ''
         })
 
-        })
+    })
         .then(res => res.json())
         .then(data => data)
 }
-
-// Button Functionality
-
-
