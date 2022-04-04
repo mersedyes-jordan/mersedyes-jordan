@@ -110,7 +110,7 @@
             <div class="collapse navbar-collapse" id="navbarExample01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="#intro">Home</a>
+<!--                        <a class="nav-link" aria-current="page" href="#intro">Home</a>-->
                     </li>
                     <li class="nav-item">
                         <a
@@ -118,55 +118,48 @@
                                 href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
                                 rel="nofollow"
                                 target="_blank"
-                        >Learn Bootstrap 5</a
-                        >
+<!--                        Learn Bootstrap 5</a-->
+
                     </li>
-                    <li class="nav-item">
-                        <a
-                                class="nav-link"
-                                href="https://mdbootstrap.com/docs/standard/"
-                                target="_blank"
-                        >Download MDB UI KIT</a
-                        >
-                    </li>
+
                 </ul>
 
                 <ul class="navbar-nav flex-row">
                     <!-- Icons -->
-                    <li class="nav-item">
-                        <a
-                                class="nav-link pe-2"
-                                href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"
-                                rel="nofollow"
-                                target="_blank"
-                        >
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                                class="nav-link px-2"
-                                href="https://www.facebook.com/mdbootstrap"
-                                rel="nofollow"
-                                target="_blank"
-                        >
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a
-                                class="nav-link px-2"
-                                href="https://twitter.com/MDBootstrap"
-                                rel="nofollow"
-                                target="_blank"
-                        >
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
+<!--                    <li class="nav-item">-->
+<!--                        <a-->
+<!--                                class="nav-link pe-2"-->
+<!--                                href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA"-->
+<!--                                rel="nofollow"-->
+<!--                                target="_blank"-->
+<!--                        >-->
+<!--                            <i class="fab fa-youtube"></i>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a-->
+<!--                                class="nav-link px-2"-->
+<!--                                href="https://www.facebook.com/mdbootstrap"-->
+<!--                                rel="nofollow"-->
+<!--                                target="_blank"-->
+<!--                        >-->
+<!--                            <i class="fab fa-facebook-f"></i>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a-->
+<!--                                class="nav-link px-2"-->
+<!--                                href="https://twitter.com/MDBootstrap"-->
+<!--                                rel="nofollow"-->
+<!--                                target="_blank"-->
+<!--                        >-->
+<!--                            <i class="fab fa-twitter"></i>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li class="nav-item">
                         <a
                                 class="nav-link ps-2"
-                                href="https://github.com/mdbootstrap/mdb-ui-kit"
+                                href="https://github.com/mersedyes-jordan"
                                 rel="nofollow"
                                 target="_blank"
                         >
@@ -184,21 +177,31 @@
             id="intro"
             class="bg-image"
             style="
-              background-image: url(https://mdbcdn.b-cdn.net/img/new/fluid/city/113.jpg);
-              height: 100vh;
+              background-image: url('images/film-strip-background-grunge-blue-35264269.jpeg');
+              background-repeat: no-repeat;
+
               "
     >
         <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.8)">
             <div class="container d-flex align-items-center text-center h-100">
                 <div>
-                    <h1 class="mb-5">This is title</h1>
+                    <h1 class="mb-5 justify-content-center">Welcome to Reel Films</h1>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis molestiae
-                        laboriosam numquam expedita ullam saepe ipsam, deserunt provident corporis,
-                        sit non accusamus maxime, magni nulla quasi iste ipsa architecto? Autem!
+                        Explore reel films in a reel way
                     </p>
                 </div>
             </div>
+            <section class="search">
+                <div class="search-element">
+                    <form id="searchForm">
+                        <input type="text" class="form-control" placeholder="Search the movie of your desire" id="movie-search-bar">
+                    </form>
+                    <button class="submit" id="submit">Enter</button>
+                    <button class="submit" id="submit">Add Movie</button>
+                    <div class="search-list" id="search-list">
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
     <!-- Background image -->
@@ -206,25 +209,10 @@
 <!--Main Navigation-->
 
 <div class="container my-5">
-    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam minima perspiciatis eos tenetur. Praesentium dolores at quos aperiam sed, sint provident consectetur incidunt, nostrum porro earum commodi, ex architecto.</p>
-
 </div>
 <!--end of secondary navbar-->
 <!-- Main -->
 
-<!-- Search -->
-
-<section class="search">
-    <div class="search-element">
-        <h3>Search Film</h3>
-        <form id="searchForm">
-            <input type="text" class="form-control" placeholder="Search the movie of your desire" id="movie-search-bar">
-        </form>
-        <button class="submit" id="submit">Enter</button>
-        <div class="search-list" id="search-list">
-        </div>
-    </div>
-</section>
 
 <section>
     <div class="container">

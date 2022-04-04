@@ -23,7 +23,10 @@ body {
 }
 
 .search {
-    margin: 200px;
+    margin:50px;
+    align-items: center;
+    padding-left: 150px;
+    padding-right: 100px;
 }
 
 .container {
@@ -181,6 +184,12 @@ nav ul,nav li {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.submit {
+    background-color: var(--color-white);
+    font-size: 1rem;
+}
+
+
 /*#loading-page {
     width: 100%;
     height: auto;
@@ -279,8 +288,4 @@ nav ul,nav li {
         }
     }
 }*/
-.submit {
-    background-color: var(--color-white);
-    font-size: 1rem;
-}
 
