@@ -29,7 +29,6 @@ function getMovieCard(movie) {
                 <h5>${movie.title}</h5>
                 <input class='card-text rating' value="Rating: ${movie.rating}" readonly>
                 <input class="card-text genre" value="Genre: ${movie.genre}" readonly>
-                <br>
                 <button type="button" class="edit-btn" data-id="${movie.id}">Edit</button>
                 <button type="button" class="delete-btn" onclick="deleteMovie(${movie.id})">Delete</button>
             </div>
