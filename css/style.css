@@ -257,6 +257,144 @@ nav ul,nav li {
         }
     }
 
+    .main-menu {
+        position: fixed;
+    }
+
+    .main-display {
+        margin-top: 10px;
+        margin-left: 70px;
+        margin-right: 10px;
+    }
+
+    .search {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #searchForm {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .submit {
+        margin-left: 10px;
+        width: 50px;
+        border-radius: 5px;
+        height: 40px;
+    }
+
+    .add-menu {
+        align-content: center;
+        margin: 5px;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    .bar:nth-child(1) {
+        transform: translateY(8px);
+    }
+
+    .bar:nth-child(2) {
+        transform: rotate(90deg);
+    }
+
+    .add-movie-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    #addMovieForm {
+        display: none;
+    }
+
+    #addMovieForm.active {
+        margin: 20px 0;
+        padding: 20px;
+        display: flex; align-content;
+        flex-direction: column;
+        width: 50%;
+        background-color: #8D99AE;
+        border-radius: 5px;
+    }
+
+    #addMovieForm input {
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .addMovieBtn {
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+
+    .form-control {
+        width: 500px;
+    }
+
+    .movies {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 300px;
+        height: 400px;
+        margin: 20px 10px;
+    }
+
+    .card-body button {
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+    }
+
+    .delete-btn {
+        background-color: red;
+        opacity: 35%;
+        color: white;
+    }
+
+    .edit-btn {
+        background-color: #8D99AE;
+        color: white;
+    }
+
+    .card-body h5 {
+        color: #2B2D42;
+    }
+
+    .card-text {
+        border: none;
+    }
+
+    .delete-btn {
+
+    }
+
+    .edit-btn {
+
+    }
+
     .submit {
         background-color: var(--color-white);
         font-size: 1rem;

@@ -26,8 +26,6 @@
     <img class="loading-logo" src="img/movie-app-logo.png" alt="Movie App Logo">
 </div>
 
-<!-- End of Preloader -->
-
 <!-- Navbar -->
 
 <div class="area"></div>
@@ -85,46 +83,44 @@
     </ul>
 </nav>
 </div>
-<!-- End of Nav -->
+
 <!-- Main -->
+
+<div class="main-display">
 
 <!-- Search -->
 
-<section class="search">
-    <div class="search-element">
-        <h3>Search Film</h3>
-        <form id="searchForm">
-            <input type="text" class="form-control" placeholder="Search the movie of your desire" id="movie-search-bar">
-        </form>
-        <button class="submit" id="submit">Enter</button>
-        <div class="search-list" id="search-list">
+    <section class="search">
+            <form id="searchForm">
+                <input type="text" class="form-control" placeholder="Search..." id="movie-search-bar">
+                <button class="submit" id="submit"> > </button>
+            </form>
+
+    <!-- Add Movie -->
+
+        <div class="add-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
+    </section>
+
+    <div class="add-movie-menu">
+        <form id="addMovieForm">
+            <h2>Add a Movie</h2>
+            <input type="text" class="add-movie-name" placeholder="Enter Movie Name.... " id="add-movie-name">
+            <input type="text" class="add-movie-genre" placeholder="Enter Movie Genre.... " id="add-movie-genre">
+            <input type="text" class="add-movie-rating" placeholder="Enter Movie Rating.... " id="add-movie-rating">
+            <button class="addMovieBtn" id="addMovieBtn">Submit</button>
+        </form>
     </div>
-</section>
-<form id="addMovieForm">
-    <input type="text" class="add-movie-name" placeholder="Enter Movie Name.... " id="add-movie-name">
-    <input type="text" class="add-movie-genre" placeholder="Enter Movie Genre.... " id="add-movie-genre">
-    <input type="text" class="add-movie-rating" placeholder="Enter Movie Rating.... " id="add-movie-rating">
-    <button class="addMovieBtn" id="addMovieBtn">Submit</button>
-</form>
 
-<section>
-    <div class="container">
-        <div class="row" id="movies"></div>
+    <!-- Display Movies -->
+
+    <div class="movies">
+
     </div>
-</section>
-
-<!--<form-->
-<!--<button id="add-movie">Click to Add </button>-->
-
-<div class="movies">
 
 </div>
-
-<!-- End of Main -->
-
-<!-- Footer -->
-
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>

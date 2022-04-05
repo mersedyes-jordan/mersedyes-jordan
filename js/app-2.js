@@ -29,9 +29,9 @@ function getMovieCard(movie) {
                 <h5>${movie.title}</h5>
                 <input class='card-text rating' value="Rating: ${movie.rating}" readonly>
                 <input class="card-text genre" value="Genre: ${movie.genre}" readonly>
-                <button type="button" class="delete-btn" onclick="deleteMovie(${movie.id})">Delete
-                </button>
+                <br>
                 <button type="button" class="edit-btn" data-id="${movie.id}">Edit</button>
+                <button type="button" class="delete-btn" onclick="deleteMovie(${movie.id})">Delete</button>
             </div>
         </div>`
 }
@@ -113,3 +113,10 @@ function saveMovie() {
         .then(res => res.json())
         .then(data => data)
 }
+
+const addMenu = document.querySelector('.add-menu');
+const addFields = document.querySelector('#addMovieForm')
+
+addMenu.addEventListener('click', () => {
+    addFields.classList.toggle('active');
+});
